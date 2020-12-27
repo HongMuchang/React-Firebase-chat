@@ -5,11 +5,12 @@ import { pushMessage } from "../firebase";
 const MessageField = ({ name, setText, text }) => {
   const [isComposed, setIsComposed] = useState(false);
 
-  console.log({ setText, text });
+  // console.log({ setText, text });
 
   return (
     <div>
       <TextField
+        autoFocus
         fullWidth={true}
         onChange={(e) => {
           setText(e.target.value);
@@ -27,6 +28,7 @@ const MessageField = ({ name, setText, text }) => {
             pushMessage({ name: { name }, text: { text } });
             setText("");
             e.preventDefault();
+            console.log("追加完了しました");
           }
         }}
         //変換Enter設定
