@@ -1,13 +1,24 @@
 import firebase from "firebase";
 
+//envの読み込み
+const {
+  REACT_APP_FIREBASE_API_KEY,
+  REACT_APP_FIREBASE_AUTH,
+  REACT_APP_FIREBASE_DATABASE_URL,
+  REACT_APP_FIREBASE_PROJECT_ID,
+  REACT_APP_FIREBASE_STORAGEBUCKET,
+  REACT_APP_FIREBASE_MESSAGEING_SENDER_ID,
+  REACT_APP_FIREBASE_APP_ID,
+} = process.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBlKgxJVKEWhRAv--hUXIazDOsgCMNfY08",
-  authDomain: "react-chat-d0381.firebaseapp.com",
-  databaseURL: "https://react-chat-d0381-default-rtdb.firebaseio.com",
-  projectId: "react-chat-d0381",
-  storageBucket: "react-chat-d0381.appspot.com",
-  messagingSenderId: "835932796539",
-  appId: "1:835932796539:web:014b57b30f65a5e74554de",
+  apiKey: REACT_APP_FIREBASE_API_KEY,
+  authDomain: REACT_APP_FIREBASE_AUTH,
+  databaseURL: REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: REACT_APP_FIREBASE_MESSAGEING_SENDER_ID,
+  appId: REACT_APP_FIREBASE_APP_ID,
 };
 
 // 初期化
