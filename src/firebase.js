@@ -28,6 +28,14 @@ const database = firebase.database();
 //参照
 const messageRef = database.ref("message");
 // 追加
-export const pushMessage = ({ name, text }) => {
-  messageRef.push({ name, text });
+export const pushMessage = ({
+  name,
+  text
+}) => {
+  messageRef.push({
+    name,
+    text
+  });
 };
+// 取得
+export const messagesRef = database.ref('messages');
