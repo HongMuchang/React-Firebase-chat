@@ -22,13 +22,15 @@ const MasseageInputField = ({ name }) => {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid xs={1}>
+        <Grid xs={1} item>
           <Avatar src={avatarPath} />
         </Grid>
-        <Grid xs={10}>
+        <Grid xs={10} item>
           <MessageField name={name} setText={setText} text={text} />
         </Grid>
-        <Grid xs={1}>ボタン</Grid>
+        <Grid xs={1} item>
+          ボタン
+        </Grid>
       </Grid>
     </div>
   );
