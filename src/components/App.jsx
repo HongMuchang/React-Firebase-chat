@@ -5,7 +5,7 @@ import Config from "../config.json";
 
 export default () => {
   const [name, setName] = useState("");
-  console.log({ name });
+  // console.log({ name });
 
   if (Config.signInEnabled && name === "") {
     return <Sginin setName={setName} />;
