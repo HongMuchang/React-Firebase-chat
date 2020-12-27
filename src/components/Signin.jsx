@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -49,8 +49,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn({ setName }) {
   const classes = useStyles();
+
+  //始めるボタンのdisabled
+  const [disabled, setDisabled] = useState(true);
+  //formの値
+  const [string, setString] = useState("");
+
+  //ボタンの有効化、無効化切替
+  useEffect(() => {
+    //空の時のみ値の更新
+    const disabled = string === "";
+    setDisabled(disabled);
+  }, [string]);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -69,13 +81,16 @@ export default function SignIn() {
             label="ニックネーム"
             name="name"
             autoFocus
+            onChange={(e) => setString(e.target.value)}
           />
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            disabled={disabled}
+            onClick={() => setName(string)}
           >
             はじめる
           </Button>

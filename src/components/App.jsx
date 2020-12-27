@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Sginin from "./Signin";
 
 export default () => {
+  const [name, setName] = useState("");
+  console.log({ name });
+
   return (
     <div>
-      <Sginin />
+      <Sginin setName={setName} />
     </div>
   );
 };
