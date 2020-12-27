@@ -10,6 +10,6 @@ export default () => {
   if (Config.signInEnabled && name === "") {
     return <Sginin setName={setName} />;
   } else {
-    return <Main />;
+    return <Main name={name} />;
   }
 };
