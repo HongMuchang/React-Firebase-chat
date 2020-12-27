@@ -10,6 +10,7 @@ const Button = ({ name, setText, text }) => {
       onClick={() => {
         pushMessage({ name: { name }, text: { text } });
         setText("");
+        console.log("追加完了しました");
       }}
     >
       <SendIcon />
